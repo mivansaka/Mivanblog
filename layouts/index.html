@@ -11,7 +11,8 @@
     <section class="posts-list">
         <h2 class="sidebar-title">最近文章</h2>
         <ul class="sidebar-list">
-            {{- range where (where .Site.RegularPages "Type" "neq" "page") "Kind" "page").ByDate.Reverse | first 10 }}
+            {{- $posts := where .Site.RegularPages "Type" "neq" "page" }}
+            {{- range $posts.ByDate.Reverse | first 10 }}
             <li class="post-entry">
                 <a class="post-entry-title" href="{{ .Permalink }}">
                     <span>{{ .Title }}</span>

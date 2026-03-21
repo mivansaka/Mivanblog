@@ -1,0 +1,15 @@
+{{- /*  header.html  */ -}}
+<header class="navbar">
+    <div class="navbar-content">
+        <a class="navbar-brand" href="{{ .Site.BaseURL | relURL }}">
+            {{ .Site.Title }}
+        </a>
+        <nav class="navbar-nav">
+            {{- range .Site.Menus.main }}
+            <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL | relURL }}">
+                {{ .Name }}
+            </a>
+            {{- end }}
+        </nav>
+    </div>
+</header>

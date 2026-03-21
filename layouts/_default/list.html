@@ -1,0 +1,42 @@
+{{- /*  list.html  */ -}}
+{{- define "main" -}}
+<div class="posts-container">
+    <section class="posts-list" style="grid-column: 1 / -1;">
+        <h1 class="sidebar-title">{{ .Title }}</h1>
+
+        {{- if .Content }}
+        <div class="hero-subtitle" style="margin-bottom: 4rem;">
+            {{ .Content }}
+        </div>
+        {{- end }}
+
+        <ul class="sidebar-list">
+            {{- range .Paginator.Pages }}
+            <li class="post-entry">
+                <a class="post-entry-title" href="{{ .Permalink }}">
+                    <span>{{ .Title }}</span>
+                    <span class="post-entry-meta">
+                        {{ .Date.Format "Jan 2006" }}
+                    </span>
+                </a>
+            </li>
+            {{- end }}
+        </ul>
+
+        {{- if gt .Paginator.TotalPages 1 }}
+        <div style="margin-top: 4rem; display: flex; gap: 2rem;">
+            {{- if .Paginator.HasPrev }}
+            <a class="nav-link" href="{{ .Paginator.Prev.URL }}" style="border-bottom: 1px solid var(--on-background); padding-bottom: 0.25rem;">
+                ← Previous
+            </a>
+            {{- end }}
+            {{- if .Paginator.HasNext }}
+            <a class="nav-link" href="{{ .Paginator.Next.URL }}" style="border-bottom: 1px solid var(--on-background); padding-bottom: 0.25rem;">
+                Next →
+            </a>
+            {{- end }}
+        </div>
+        {{- end }}
+    </section>
+</div>
+{{- end }}

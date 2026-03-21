@@ -1,0 +1,479 @@
+/**
+ * The Modern Scholar - Custom Theme Override
+ * Based on PaperMod theme with custom styling
+ */
+
+/* ========================================
+   字体配置
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+:root {
+  /* 颜色系统 - 亮色模式 */
+  --background: #fbf9f3;
+  --surface: #fbf9f3;
+  --on-background: #1b1c19;
+  --on-surface: #1b1c19;
+  --on-surface-variant: #444748;
+  --primary: #000000;
+  --on-primary: #ffffff;
+  --secondary: #5e5e5e;
+  --tertiary: #000000;
+  --outline: #747878;
+  --outline-variant: #c4c7c7;
+
+  /* 字体 */
+  --font-headline: 'Newsreader', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-label: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* 间距 */
+  --content-width: 1440px;
+  --content-padding: 3.5rem;
+  --spacing-section: 12rem;
+
+  /* 过渡 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* 暗色模式 */
+.dark {
+  --background: #1c1b1b;
+  --surface: #1c1b1b;
+  --on-background: #fbf9f3;
+  --on-surface: #fbf9f3;
+  --on-surface-variant: #c4c7c7;
+  --primary: #c8c6c5;
+  --on-primary: #1c1b1b;
+  --secondary: #c7c6c6;
+  --tertiary: #e5e2e1;
+  --outline: #747878;
+  --outline-variant: #474746;
+}
+
+/* ========================================
+   全局样式
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ========================================
+   导航栏
+   ======================================== */
+
+.navbar {
+  background-color: transparent;
+  padding: 3rem 0 2rem;
+  border-bottom: none;
+}
+
+.navbar-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.navbar-brand {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--on-background);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 3rem;
+  align-items: baseline;
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface);
+  text-decoration: none;
+  padding-bottom: 0.125rem;
+  opacity: 0.8;
+  transition: opacity var(--transition-normal);
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: var(--on-background);
+}
+
+.nav-link.active {
+  border-bottom: 1px solid var(--on-background);
+  opacity: 1;
+}
+
+/* ========================================
+   首页 Hero 区域
+   ======================================== */
+
+.hero-section {
+  max-width: var(--content-width);
+  margin: 8rem auto 12rem;
+  padding: 0 var(--content-padding);
+}
+
+.hero-title {
+  font-family: var(--font-headline);
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin-bottom: 2rem;
+  color: var(--on-background);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--on-surface-variant);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 42rem;
+}
+
+/* ========================================
+   文章列表
+   ======================================== */
+
+.posts-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 6rem 2rem;
+}
+
+.posts-list {
+  grid-column: 1 / 9;
+}
+
+.post-entry {
+  margin-bottom: 2rem;
+}
+
+.post-entry-title {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--on-background);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  transition: opacity var(--transition-normal);
+}
+
+.post-entry-title:hover {
+  opacity: 0.6;
+}
+
+.post-entry-meta {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+}
+
+/* ========================================
+   侧边栏（Selected Work）
+   ======================================== */
+
+.sidebar-section {
+  grid-column: 10 / 13;
+}
+
+.sidebar-title {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--on-surface-variant);
+  margin-bottom: 3rem;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: opacity var(--transition-normal);
+}
+
+.sidebar-link:hover {
+  opacity: 0.8;
+}
+
+.sidebar-link-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-link-description {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+/* ========================================
+   文章页面
+   ======================================== */
+
+.post-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+.post-header {
+  max-width: 42rem;
+  margin-bottom: 4rem;
+}
+
+.post-title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  color: var(--on-background);
+}
+
+.post-meta {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+}
+
+.post-content {
+  max-width: 42rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--on-surface);
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content h2 {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--on-background);
+}
+
+.post-content h3 {
+  font-family: var(--font-headline);
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--on-background);
+}
+
+.post-content a {
+  color: var(--on-background);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: opacity var(--transition-fast);
+}
+
+.post-content a:hover {
+  opacity: 0.6;
+}
+
+.post-content blockquote {
+  border-left: 2px solid var(--outline);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--on-surface-variant);
+}
+
+.post-content code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 0.9em;
+  background-color: var(--outline-variant);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.post-content pre {
+  background-color: var(--on-background);
+  color: var(--background);
+  padding: 1.5rem;
+  border-radius: 0;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* ========================================
+   页脚
+   ======================================== */
+
+.footer {
+  background-color: transparent;
+  padding: 6rem 0;
+  margin-top: var(--spacing-section);
+  border-top: none;
+}
+
+.footer-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-copyright {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--on-surface-variant);
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-link {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.footer-link:hover {
+  color: var(--on-background);
+}
+
+/* ========================================
+   响应式设计
+   ======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --content-padding: 2rem;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .posts-list {
+    grid-column: 1;
+  }
+
+  .sidebar-section {
+    grid-column: 1;
+  }
+
+  .post-entry-title {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+/* ========================================
+   PaperMod 特定覆盖
+   ======================================== */
+
+/* 隐藏默认元素 */
+main {
+  background-color: transparent !important;
+}
+
+article {
+  background-color: transparent !important;
+}
+
+/* 覆盖文章卡片样式 */
+.post-entry:has(.entry-cover) .entry-title,
+.post-entry:has(.entry-content) {
+  display: none;
+}
+
+/* 隐藏阅读时间等元数据（可选） */
+.post-meta-items {
+  display: none;
+}

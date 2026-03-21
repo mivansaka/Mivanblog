@@ -1,0 +1,26 @@
+{{- /*  single.html  */ -}}
+{{- define "main" -}}
+<article class="post-container">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        <div class="post-meta">
+            {{ .Date.Format "January 2, 2006" }}
+            {{- if .Draft }} · <span style="opacity: 0.6;">Draft</span>{{ end }}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{- .Content }}
+    </div>
+
+    {{- if and (.Params.tags) (not .Params.hidemeta) }}
+    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--outline-variant);">
+        <div style="font-family: var(--font-label); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--on-surface-variant);">
+            {{ range .Params.tags }}
+            <span style="margin-right: 1rem;">#{{ . }}</span>
+            {{ end }}
+        </div>
+    </footer>
+    {{- end }}
+</article>
+{{- end }}

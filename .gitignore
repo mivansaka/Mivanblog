@@ -1,0 +1,27 @@
+# Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+.cache/
+
+# Node modules (if using npm for any tools)
+node_modules/
+
+# Environment files
+.env
+.env.local

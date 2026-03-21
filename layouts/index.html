@@ -1,0 +1,64 @@
+{{- /*  index.html  */ -}}
+{{- define "main" -}}
+<section class="hero-section">
+    <h1 class="hero-title">
+        {{ .Site.Title }}.
+    </h1>
+    {{- with .Site.Params.homeSubtitle }}
+    <p class="hero-subtitle">
+        {{ . }}
+    </p>
+    {{- end }}
+</section>
+
+<div class="posts-container">
+    <!-- Essays Section -->
+    <section class="posts-list">
+        <h2 class="sidebar-title">Essays</h2>
+        <ul class="sidebar-list">
+            {{- range (where .Site.RegularPages "Type" "in" (slice "post" "posts" "essay" "essays")) | first 10 }}
+            <li class="post-entry">
+                <a class="post-entry-title" href="{{ .Permalink }}">
+                    <span>{{ .Title }}</span>
+                    <span class="post-entry-meta">
+                        {{ .Date.Format "Jan 2006" }}
+                    </span>
+                </a>
+            </li>
+            {{- end }}
+        </ul>
+        {{- if gt (len (where .Site.RegularPages "Type" "in" (slice "post" "posts" "essay" "essays"))) 10 }}
+        <div style="margin-top: 3rem;">
+            <a class="nav-link" href="/essays/" style="border-bottom: 1px solid var(--on-background); padding-bottom: 0.25rem;">
+                View all Essays →
+            </a>
+        </div>
+        {{- end }}
+    </section>
+
+    <!-- Selected Work / Metadata Column -->
+    <aside class="sidebar-section">
+        <h2 class="sidebar-title">Selected Work</h2>
+        <ul class="sidebar-list">
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="#">
+                    <span class="sidebar-link-title">Bibliotheca Project</span>
+                    <span class="sidebar-link-description">A minimal search engine for public domain academic journals.</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="#">
+                    <span class="sidebar-link-title">Vellum OS</span>
+                    <span class="sidebar-link-description">Conceptual operating system designed for distraction-free writing.</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="#">
+                    <span class="sidebar-link-title">Stoa Reader</span>
+                    <span class="sidebar-link-description">Custom typeface for long-form digital reading.</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>
+{{- end }}

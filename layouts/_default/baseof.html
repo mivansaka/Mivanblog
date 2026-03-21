@@ -1,0 +1,17 @@
+{{- /*  baseof.html  */ -}}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" class="{{ .Site.Params.defaultTheme }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{- partial "docs/inject/head.html" . -}}
+</head>
+<body class="font-body">
+    {{- partial "header.html" . -}}
+    <main>
+        {{- block "main" . }}{{- end }}
+    </main>
+    {{- partial "footer.html" . -}}
+    {{- partial "docs/inject/body.html" . -}}
+</body>
+</html>

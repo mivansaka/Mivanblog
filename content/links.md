@@ -12,6 +12,7 @@ type: "page"
 - [Vigorous Pro](https://www.wevg.org/)
 - [royink](https://blog.royink.li/)
 - [Lasagna Chenn](https://nlasagna.github.io)
+- [Acacius](https://stillwriting.me)
 
 ## 地球總務省
 

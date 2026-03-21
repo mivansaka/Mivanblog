@@ -23,9 +23,9 @@
   --outline: #747878;
   --outline-variant: #c4c7c7;
 
-  /* 字体 - 添加日文字体支持 */
-  --font-headline: 'Newsreader', 'Shippori Mincho', Georgia, serif;
-  --font-body: 'Inter', 'Shippori Mincho', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* 字体 - 标题用衬线，正文用非衬线 */
+  --font-headline: 'Newsreader', 'Noto Serif SC', 'Shippori Mincho', Georgia, serif;
+  --font-body: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-label: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* 间距 */

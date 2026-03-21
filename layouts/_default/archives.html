@@ -8,7 +8,7 @@
     </header>
 
     <section class="archive-list">
-        {{- range (where .Site.RegularPages "Type" "page" "neq).GroupByDate "2006" }}
+        {{- range where .Site.RegularPages "Type" "neq" "page" | groupByDate "2006" }}
         <div class="year-group">
             <div class="year-header">
                 <span class="year-label">{{ .Key }}</span>

@@ -1,3 +1,4 @@
+{{- /*  archives/single.html  */ -}}
 {{- define "main" -}}
 <div class="archive-page">
     <header class="archive-header">
@@ -8,7 +9,7 @@
     </header>
 
     <section class="archive-list">
-        {{- $pages := where .Site.RegularPages "Type" "neq" "page" }}
+        {{- $pages := where .Site.RegularPages "Type" "!=" "page" }}
         {{- range $pages.GroupByDate "2006" }}
         <div class="year-group">
             <div class="year-header">

@@ -11,7 +11,7 @@
     <section class="posts-list">
         <h2 class="sidebar-title">最近文章</h2>
         <ul class="sidebar-list">
-            {{- $posts := where .Site.RegularPages "Type" "neq" "page" }}
+            {{- $posts := where .Site.RegularPages "Type" "!=" "page" }}
             {{- range $posts.ByDate.Reverse | first 10 }}
             <li class="post-entry">
                 <a class="post-entry-title" href="{{ .Permalink }}">
@@ -69,12 +69,4 @@
         </ul>
     </aside>
 </div>
-
-<style>
-    /* 为日文标题单独设置字体 */
-    .hero-title {
-        font-family: 'Noto Serif JP', 'Newsreader', Georgia, serif !important;
-        font-weight: 300;
-    }
-</style>
 {{- end }}

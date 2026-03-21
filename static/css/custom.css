@@ -7,7 +7,7 @@
    字体配置
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+/* Fonts are loaded in baseof.html for better performance */
 
 :root {
   /* 颜色系统 - 亮色模式 */
@@ -23,9 +23,9 @@
   --outline: #747878;
   --outline-variant: #c4c7c7;
 
-  /* 字体 */
-  --font-headline: 'Newsreader', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* 字体 - 添加日文字体支持 */
+  --font-headline: 'Newsreader', 'Shippori Mincho', Georgia, serif;
+  --font-body: 'Inter', 'Shippori Mincho', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-label: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* 间距 */

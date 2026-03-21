@@ -5,11 +5,9 @@ draft: false
 type: "page"
 ---
 
-# About me
-
 ***
 
-我是 Mivansaka，一般朋友会喊我为 Mivan、米丸。目前主要做智能工厂和自动化规划的工作，会 Autodesk 公司的小部分软件、Solidworks、Matlab 以及入门中的 Abaqus。
+我是 Mivansaka，一般朋友会喊我为 Mivan、米丸。目前做过智能工厂和自动化规划的工作但是实在太累了，转头奔向纯制造业没想到还是一样的累，不是。
 
 上班上得厌倦了，想每天琢磨一些不一样的东西，但还是在兢兢业业上班。
 
@@ -26,14 +24,16 @@ I have seen **the golden years** of Chinese Internet and really miss them. That 
 你还能在这些社交媒体找到我：
 
 - **Instagram**: [@Mivansaka](https://www.instagram.com/mivansaka/)
-- **Twitter**: [@mivansaka](https://twitter.com/mivansaka)
+- **Twitter**: NULL
 - **GitHub**: [mivansaka](https://github.com/mivansaka)
 
-或是使用通讯工具 **Telegram** 直接给我发送消息：[@Mivansaka](https://t.me/Mivansaka)
+或是使用通讯工具 **Telegram** 直接给我发送消息：[@Mivansaka](https://t.me/Mivansaka)  
+
+或者给我写邮件也是有意思的事情：mivansaka@outlook.com
 
 ---
 
-一起来玩游戏吧！**Switch 账号**：`SW-6302-5511-8047`
+一起来玩游戏吧！**Switch 账号**：`SW-6302-5511-8047`但很可惜我很久不上线了。
 
 ***
 

@@ -1,6 +1,6 @@
-baseURL: "https://example.com"
-title: "The Modern Scholar"
-languageCode: "en-us"
+baseURL: "https://mivansaka.github.io"
+title: "Mivansaka's Blog"
+languageCode: "zh-Hans"
 theme: "PaperMod"
 
 # 启用相对 URL
@@ -32,28 +32,21 @@ buildExpired: false
 # 菜单配置
 menu:
   main:
-    - identifier: essays
-      name: Essays
-      url: /essays/
-      weight: 1
-    - identifier: library
-      name: Library
-      url: /library/
-      weight: 2
     - identifier: archives
-      name: Archives
+      name: 所有文章
       url: /archives/
-      weight: 3
+      weight: 1
     - identifier: about
-      name: About
+      name: 关于
       url: /about/
-      weight: 4
+      weight: 2
+    - identifier: links
+      name: 友链
+      url: /links/
+      weight: 3
 
 # PaperMod 主题配置
 params:
-  # 首页副标题
-  homeSubtitle: "A digital garden exploring the intersection of classical humanities, modern computation, and the quiet pursuit of intellectual depth in a noisy world."
-
   # 主题模式
   defaultTheme: light
   disableThemeToggle: false
@@ -104,12 +97,21 @@ params:
   #     - name: Archives
   #       url: archives
 
+  # 作者信息
+  author: "Mivansaka"
+  email: "d635663347@gmail.com"
+  description: "Mivansaka's Blog - 自由、开放、多样、将人类相互连结的网络"
+
   # 社交图标
   socialIcons:
     - name: twitter
-      url: "https://twitter.com/"
+      url: "https://twitter.com/mivansaka"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/mivansaka"
+    - name: instagram
+      url: "https://www.instagram.com/mivansaka/"
+    - name: Telegram
+      url: "https://t.me/Mivansaka"
 
   # 自定义配置
   customCSS:

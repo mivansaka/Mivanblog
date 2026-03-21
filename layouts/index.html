@@ -2,63 +2,78 @@
 {{- define "main" -}}
 <section class="hero-section">
     <h1 class="hero-title">
-        {{ .Site.Title }}.
+        多くの祭り（フエト）のために
     </h1>
-    {{- with .Site.Params.homeSubtitle }}
-    <p class="hero-subtitle">
-        {{ . }}
-    </p>
-    {{- end }}
 </section>
 
 <div class="posts-container">
-    <!-- Essays Section -->
+    <!-- Recent Posts Section -->
     <section class="posts-list">
-        <h2 class="sidebar-title">Essays</h2>
+        <h2 class="sidebar-title">最近文章</h2>
         <ul class="sidebar-list">
-            {{- range (where .Site.RegularPages "Type" "in" (slice "post" "posts" "essay" "essays")) | first 10 }}
+            {{- range (where .Site.RegularPages "Kind" "page").ByDate.Reverse | first 10 }}
             <li class="post-entry">
                 <a class="post-entry-title" href="{{ .Permalink }}">
                     <span>{{ .Title }}</span>
                     <span class="post-entry-meta">
-                        {{ .Date.Format "Jan 2006" }}
+                        {{ .Date.Format "2006-01-02" }}
                     </span>
                 </a>
             </li>
             {{- end }}
         </ul>
-        {{- if gt (len (where .Site.RegularPages "Type" "in" (slice "post" "posts" "essay" "essays"))) 10 }}
         <div style="margin-top: 3rem;">
-            <a class="nav-link" href="/essays/" style="border-bottom: 1px solid var(--on-background); padding-bottom: 0.25rem;">
-                View all Essays →
+            <a class="nav-link" href="/archives/" style="border-bottom: 1px solid var(--on-background); padding-bottom: 0.25rem;">
+                查看全部 →
             </a>
         </div>
-        {{- end }}
     </section>
 
-    <!-- Selected Work / Metadata Column -->
+    <!-- Sidebar -->
     <aside class="sidebar-section">
-        <h2 class="sidebar-title">Selected Work</h2>
+        <h2 class="sidebar-title">关于</h2>
+        <p style="font-size: 0.875rem; line-height: 1.7; color: var(--on-surface-variant); margin-bottom: 2rem;">
+            我是 Mivansaka，一般朋友会喊我为 Mivan、米丸。主要做智能工厂和自动化规划的工作。
+        </p>
+        <p style="font-size: 0.875rem; line-height: 1.7; color: var(--on-surface-variant); margin-bottom: 2rem;">
+            <a href="/about/" style="color: inherit; text-decoration: underline; text-underline-offset: 0.2em;">了解更多 →</a>
+        </p>
+
+        <h2 class="sidebar-title" style="margin-top: 3rem;">社交</h2>
         <ul class="sidebar-list">
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
-                    <span class="sidebar-link-title">Bibliotheca Project</span>
-                    <span class="sidebar-link-description">A minimal search engine for public domain academic journals.</span>
+                <a class="sidebar-link" href="https://twitter.com/mivansaka" target="_blank">
+                    <span class="sidebar-link-title">Twitter</span>
+                    <span class="sidebar-link-description">@mivansaka</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
-                    <span class="sidebar-link-title">Vellum OS</span>
-                    <span class="sidebar-link-description">Conceptual operating system designed for distraction-free writing.</span>
+                <a class="sidebar-link" href="https://github.com/mivansaka" target="_blank">
+                    <span class="sidebar-link-title">GitHub</span>
+                    <span class="sidebar-link-description">mivansaka</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
-                    <span class="sidebar-link-title">Stoa Reader</span>
-                    <span class="sidebar-link-description">Custom typeface for long-form digital reading.</span>
+                <a class="sidebar-link" href="https://www.instagram.com/mivansaka/" target="_blank">
+                    <span class="sidebar-link-title">Instagram</span>
+                    <span class="sidebar-link-description">@Mivansaka</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="https://t.me/Mivansaka" target="_blank">
+                    <span class="sidebar-link-title">Telegram</span>
+                    <span class="sidebar-link-description">@Mivansaka</span>
                 </a>
             </li>
         </ul>
     </aside>
 </div>
+
+<style>
+    /* 为日文标题单独设置字体 */
+    .hero-title {
+        font-family: 'Noto Serif JP', 'Newsreader', Georgia, serif !important;
+        font-weight: 300;
+    }
+</style>
 {{- end }}

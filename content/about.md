@@ -1,35 +1,41 @@
 ---
-title: "About"
+title: "关于"
 date: 2024-01-01
 draft: false
 ---
 
-Welcome to **The Modern Scholar** — a digital garden exploring the intersection of classical humanities, modern computation, and the quiet pursuit of intellectual depth in a noisy world.
+# About me
 
-## What This Is
+***
 
-This is not a blog in the traditional sense. It's a collection of essays, notes, and works-in-progress that reflect my ongoing exploration of ideas at the boundary between technology and the humanities.
+我是 Mivansaka，一般朋友会喊我为 Mivan、米丸。目前主要做智能工厂和自动化规划的工作，会 Autodesk 公司的小部分软件、Solidworks、Matlab 以及入门中的 Abaqus。
 
-## What I Write About
+上班上得厌倦了，想每天琢磨一些不一样的东西，但还是在兢兢业业上班。
 
-- The philosophy of technology and design
-- Classical thought in digital contexts
-- Minimalism and intentional living
-- Tools for thinking and creating
-- The architecture of attention
-
-## A Note on Silence
-
-I believe in the value of slow, careful thinking over hot takes and instant reactions. This space is designed for depth over breadth, quality over quantity.
-
-Updates will be irregular but thoughtful.
-
-## Get in Touch
-
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- GitHub: [yourusername](https://github.com/yourusername)
-- Email: your@email.com
+电影、音乐都是杂食性喜好，什么都听什么都看，来者不拒。这是我的 [Apple Music](https://music.apple.com/profile/mmivan "Apple Music") 和 [豆瓣](https://www.douban.com/people/88970669/ "豆瓣") 账号，欢迎关注。
 
 ---
 
-*This site is built with [Hugo](https://gohugo.io/) and the excellent [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme, heavily customized.*
+I have seen **the golden years** of Chinese Internet and really miss them. That is why i want to have this Blog to recall the memory.
+
+我所盼望的是自由、开放、多样、将人类相互连结的网络。回忆中文互联网的黄金年代。
+
+---
+
+你还能在这些社交媒体找到我：
+
+- **Instagram**: [@Mivansaka](https://www.instagram.com/mivansaka/)
+- **Twitter**: [@mivansaka](https://twitter.com/mivansaka)
+- **GitHub**: [mivansaka](https://github.com/mivansaka)
+
+或是使用通讯工具 **Telegram** 直接给我发送消息：[@Mivansaka](https://t.me/Mivansaka)
+
+---
+
+一起来玩游戏吧！**Switch 账号**：`SW-6302-5511-8047`
+
+***
+
+**你别怕我**
+
+End

@@ -1,10 +1,28 @@
 {{- /*  baseof.html  */ -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" class="{{ .Site.Params.defaultTheme }}">
+<html lang="{{ .Site.Language.Lang }}" class="{{ if eq .Site.Params.defaultTheme "dark" }}dark{{ else }}light{{ end }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{- partial "docs/inject/head.html" . -}}
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.homeSubtitle }}{{ end }}">
+    <meta name="author" content="{{ .Site.Title }}">
+
+    {{- with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{- end }}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    {{- range .Site.Params.customCSS -}}
+    <link rel="stylesheet" href="{{ . | relURL }}">
+    {{- end }}
+
+    {{- partial "extended_head.html" . | safeHTML }}
 </head>
 <body class="font-body">
     {{- partial "header.html" . -}}
@@ -12,6 +30,38 @@
         {{- block "main" . }}{{- end }}
     </main>
     {{- partial "footer.html" . -}}
-    {{- partial "docs/inject/body.html" . -}}
+
+    <!-- Theme toggle script -->
+    <script>
+        const themeToggle = () => {
+            const html = document.documentElement;
+            const current = html.classList.contains('dark') ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.classList.remove(current);
+            html.classList.add(next);
+            localStorage.setItem('theme', next);
+        };
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (prefersDark ? 'dark' : '{{ .Site.Params.defaultTheme }}');
+
+        if (initialTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Add theme toggle button if enabled
+        {{ if not .Site.Params.disableThemeToggle }}
+        if (!document.querySelector('.theme-toggle')) {
+            const toggle = document.createElement('button');
+            toggle.className = 'theme-toggle';
+            toggle.innerHTML = '◑';
+            toggle.style.cssText = 'position:fixed;top:1rem;right:1rem;padding:0.5rem;background:transparent;border:1px solid currentColor;border-radius:50%;cursor:pointer;font-size:1.2rem;opacity:0.6;';
+            toggle.addEventListener('click', themeToggle);
+            document.body.appendChild(toggle);
+        }
+        {{ end }}
+    </script>
 </body>
 </html>

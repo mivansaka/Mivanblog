@@ -133,17 +133,17 @@ body {
 
 .hero-section {
   max-width: var(--content-width);
-  margin: 8rem auto 12rem;
+  margin: 3rem auto 4rem;
   padding: 0 var(--content-padding);
 }
 
 .hero-title {
   font-family: var(--font-headline);
-  font-size: clamp(3rem, 8vw, 7.5rem);
-  line-height: 0.9;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
   font-weight: 300;
-  letter-spacing: -0.04em;
-  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
   color: var(--on-background);
 }
 
@@ -263,7 +263,7 @@ body {
 
 .post-header {
   max-width: 42rem;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem;
 }
 
 .post-title {
@@ -272,7 +272,7 @@ body {
   line-height: 1.1;
   font-weight: 300;
   letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   color: var(--on-background);
 }
 
@@ -285,6 +285,7 @@ body {
 
 .post-content {
   max-width: 42rem;
+  margin: 0 auto;
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--on-surface);

@@ -1,0 +1,174 @@
+{{- define "main" -}}
+<div class="archive-page">
+    <header class="archive-header">
+        <h1 class="archive-title">{{ .Title }}</h1>
+        {{- with .Content }}
+        <p class="archive-subtitle">{{ . }}</p>
+        {{- end }}
+    </header>
+
+    <section class="archive-list">
+        {{- range .Site.RegularPages.GroupByDate "2006" }}
+        <div class="year-group">
+            <div class="year-header">
+                <span class="year-label">{{ .Key }}</span>
+            </div>
+            <div class="year-posts">
+                {{- range .Pages }}
+                <a class="post-link" href="{{ .Permalink }}">
+                    <span class="post-date">{{ .Date.Format "Jan 02" }}</span>
+                    <div class="post-content">
+                        <h2 class="post-title">{{ .Title }}</h2>
+                    </div>
+                </a>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+    </section>
+</div>
+
+<style>
+    .archive-page {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2.5rem 3rem 12rem;
+    }
+
+    .archive-header {
+        margin-bottom: 3rem;
+    }
+
+    .archive-title {
+        font-family: 'Noto Serif SC', 'Newsreader', Georgia, serif;
+        font-size: 2.5rem;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: #1b1c19;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .archive-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        color: #444748;
+        opacity: 0.8;
+        margin: 0;
+    }
+
+    .archive-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .year-group {
+        margin-bottom: 0.75rem;
+    }
+
+    .year-header {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 0.375rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(196, 199, 199, 0.3);
+    }
+
+    .year-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: #444748;
+        opacity: 0.4;
+        font-weight: 400;
+    }
+
+    .year-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .post-link {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .post-link:hover {
+        opacity: 0.7;
+    }
+
+    .post-date {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #444748;
+        font-weight: 400;
+        min-width: 6rem;
+        line-height: 1.5;
+    }
+
+    .post-content {
+        flex: 1;
+    }
+
+    .post-title {
+        font-family: 'Noto Serif SC', 'Newsreader', Georgia, serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0.05em;
+        color: #1b1c19;
+        margin: 0;
+        transition: font-style 0.3s ease;
+    }
+
+    .post-link:hover .post-title {
+        font-style: italic;
+    }
+
+    @media (min-width: 768px) {
+        .post-link {
+            flex-direction: row;
+            align-items: center;
+            gap: 6rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .archive-page {
+            padding: 4rem 2rem 12rem;
+        }
+
+        .archive-title {
+            font-size: 1.75rem;
+        }
+
+        .post-title {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* Dark mode */
+    .dark .archive-title,
+    .dark .post-title {
+        color: #fbf9f3;
+    }
+
+    .dark .archive-subtitle,
+    .dark .year-label,
+    .dark .post-date {
+        color: #c4c7c7;
+    }
+
+    .dark .year-header {
+        border-bottom-color: rgba(71, 71, 70, 0.3);
+    }
+</style>
+{{- end }}

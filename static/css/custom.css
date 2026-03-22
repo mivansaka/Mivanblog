@@ -354,11 +354,16 @@ body {
   padding: 0;
 }
 
-.post-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 2rem 0;
+/* 图片自适应 - 强制规则 */
+.post-content img,
+article img,
+.single-content img,
+.post img,
+main img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 2rem auto !important;
   border-radius: 4px;
 }
 

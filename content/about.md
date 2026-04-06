@@ -17,7 +17,7 @@ type: "page"
 
 I have seen **the golden years** of Chinese Internet and really miss them. That is why i want to have this Blog to recall the memory.
 
-我所盼望的是自由、开放、多样、将人类相互连结的网络。回忆中文互联网的黄金年代。
+我所盼望的是自由、开放、多样、将人类相互 连结的网络。回忆中文互联网的黄金年代。
 
 ---
 
